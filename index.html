@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<a class="sr-only" href="#main">Skip to content</a>
+<a class="sr-only skip-link" href="#main">Skip to content</a>
 
 <header class="nav_wrap">
   <div class="nav_left">
@@ -30,6 +30,7 @@
     <a class="nav_item" href="#tools">Tools</a>
     <a class="nav_item" href="#sources">Data</a>
     <a class="nav_item" href="#install">Install</a>
+    <a class="nav_item" href="#next">What's next</a>
     <a class="nav_item" href="https://nomina-xyz.github.io/nomina-mcp/">Docs</a>
   </nav>
   <div class="nav_right">
@@ -44,6 +45,7 @@
   <a class="mobile_menu_link text-h2" href="#tools">Tools</a>
   <a class="mobile_menu_link text-h2" href="#sources">Data</a>
   <a class="mobile_menu_link text-h2" href="#install">Install</a>
+  <a class="mobile_menu_link text-h2" href="#next">What's next</a>
   <a class="mobile_menu_link text-h2" href="https://nomina-xyz.github.io/nomina-mcp/">Docs</a>
   <a class="mobile_menu_link text-h2" href="https://github.com/nomina-xyz/nomina-mcp">GitHub</a>
 </div>
@@ -53,7 +55,7 @@
 <section class="hero">
   <div class="hero_inner">
     <div class="hero_stack">
-      <div class="hero_eyebrow text-mono"><span class="main-dot" aria-hidden="true"></span>Nomina MCP · Read-only · No API keys</div>
+      <div class="hero_eyebrow text-mono"><span class="main-dot" aria-hidden="true"></span>Nomina MCP · Research today · Actions next</div>
       <h1 class="text-h0 hero_headline">Markets research for AI agents</h1>
       <p class="text-sub hero_sub">Sourced, dated market data inside Claude, ChatGPT and any MCP client.</p>
       <div class="button_cluster large">
@@ -74,9 +76,9 @@
             <div class="mock_tool_row"><span>compare_assets · ETH/USD, SPY/USD · 6mo</span><span class="muted">2 sources</span></div>
             <div class="mock_tool_row"><span>ETH/USD</span><span><b>+59.4%</b> · 126 shared days</span></div>
             <div class="mock_tool_row"><span>SPY/USD</span><span><b>+17.5%</b> · 126 shared days</span></div>
-            <div class="mock_tool_row"><span>max drawdown ETH</span><span class="neg">−38.2%</span></div>
+            <div class="mock_tool_row"><span>shared window</span><span>2026-03-23 → 2026-09-21 · comparable</span></div>
           </div>
-          <p class="mock_answer"><strong>ETH outran SPY by about 42 points</strong> over the shared window (Mar 23 – Sep 21), with far more drawdown along the way. Both series are on-chain Chainlink closes; percent changes use the first and last shared observation dates.</p>
+          <p class="mock_answer"><strong>ETH outran SPY by about 42 points</strong> over the shared window (Mar 23 – Sep 21). Both series are on-chain Chainlink closes; percent changes use the first and last shared observation dates, so the two are directly comparable.</p>
           <div class="mock_sources"><span class="mock_source">Chainlink · ETH/USD</span><span class="mock_source">Chainlink · SPY/USD</span><span class="mock_source">observed 2026-09-21</span></div>
         </div>
       </div>
@@ -92,7 +94,7 @@
     <div class="works_item"><span class="main-dot" aria-hidden="true"></span>Claude Code</div>
     <div class="works_item"><span class="main-dot" aria-hidden="true"></span>Gemini CLI</div>
     <div class="works_item"><span class="main-dot" aria-hidden="true"></span>MCP Registry</div>
-    <div class="works_item"><span class="main-dot purple" aria-hidden="true"></span>ChatGPT <span class="soon">in review</span></div>
+    <div class="works_item"><span class="main-dot purple" aria-hidden="true"></span>ChatGPT <span class="soon">coming soon</span></div>
   </div>
 </section>
 
@@ -148,7 +150,7 @@
       <div class="prop_left">
         <h3 class="text-h2 prop_big">Fundamentals straight from the filing</h3>
         <ul class="prop_bullet_stack">
-          <li class="prop_bullet"><span class="main-dot" aria-hidden="true"></span><span class="text-body prop_small">Latest 10-K and 10-Q figures for any SEC registrant</span></li>
+          <li class="prop_bullet"><span class="main-dot" aria-hidden="true"></span><span class="text-body prop_small">Latest 10-K and 10-Q figures for US-GAAP filers</span></li>
           <li class="prop_bullet"><span class="main-dot" aria-hidden="true"></span><span class="text-body prop_small">Revenue, income, EPS, balance sheet, cash flow</span></li>
           <li class="prop_bullet"><span class="main-dot" aria-hidden="true"></span><span class="text-body prop_small">Filing links included — as reported, not estimated</span></li>
         </ul>
@@ -160,8 +162,8 @@
 <section class="section tools" id="tools">
   <div class="header_row">
     <div class="header_stack">
-      <h2 class="text-h1">Five tools. All read-only.</h2>
-      <p class="text-sub">Every tool declares <span class="mono-inline">readOnlyHint</span> so agents run them without confirmation prompts. Nothing is created, changed or stored.</p>
+      <h2 class="text-h1">Five tools. Read-only today.</h2>
+      <p class="text-sub">Every tool declares <span class="mono-inline">readOnlyHint</span>, so hosts can let agents run them without confirmation prompts. Nothing is created, changed or stored — research first, actions when they can be that safe.</p>
     </div>
   </div>
   <ul class="tool_list">
@@ -169,7 +171,7 @@
     <li class="tool_item"><span class="tool_name">research_asset</span><span class="text-body tool_desc">Latest value, period change, drawdown and volatility, dated history and headlines for one symbol.</span><span class="tool_tag"><span class="main-dot" aria-hidden="true"></span>read-only</span></li>
     <li class="tool_item"><span class="tool_name">compare_assets</span><span class="text-body tool_desc">Align 2–6 symbols on shared dates, each in its own unit; mixed prices and yields are flagged, not blended.</span><span class="tool_tag"><span class="main-dot" aria-hidden="true"></span>read-only</span></li>
     <li class="tool_item"><span class="tool_name">market_overview</span><span class="text-body tool_desc">Period changes for BTC, ETH, SOL, gold, SPY, QQQ, EUR/USD, US 2y and 10y yields and CPI in one call.</span><span class="tool_tag"><span class="main-dot" aria-hidden="true"></span>read-only</span></li>
-    <li class="tool_item"><span class="tool_name">company_fundamentals</span><span class="text-body tool_desc">Latest annual and quarterly financials with filing links for any SEC registrant, from EDGAR XBRL.</span><span class="tool_tag"><span class="main-dot" aria-hidden="true"></span>read-only</span></li>
+    <li class="tool_item"><span class="tool_name">company_fundamentals</span><span class="text-body tool_desc">Latest annual and quarterly financials with filing links for US-GAAP filers, from EDGAR XBRL.</span><span class="tool_tag"><span class="main-dot" aria-hidden="true"></span>read-only</span></li>
   </ul>
 </section>
 
@@ -203,7 +205,7 @@
     <div class="source_card">
       <div class="source_kicker"><span class="main-dot orange" aria-hidden="true"></span>Filings</div>
       <div class="source_name">SEC EDGAR</div>
-      <p class="text-body source_desc">XBRL company facts and filing index for every US registrant.</p>
+      <p class="text-body source_desc">XBRL company facts and filing index for US-GAAP filers (10-K and 10-Q).</p>
       <div class="source_terms">Public domain · fair-access policy</div>
     </div>
     <div class="source_card">
@@ -224,14 +226,14 @@
     <a class="arrow-link" href="https://nomina-xyz.github.io/nomina-mcp/install/">Full install guide <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
   <div class="install_grid">
-    <div class="install_tabs" role="tablist" aria-label="Clients">
+    <div class="install_tabs" role="tablist" aria-label="Clients" aria-orientation="vertical">
       <button class="install_tab" role="tab" id="tab-claude" aria-selected="true" aria-controls="panel-claude">Claude <span class="main-dot" aria-hidden="true"></span></button>
       <button class="install_tab" role="tab" id="tab-code" aria-selected="false" aria-controls="panel-code" tabindex="-1">Claude Code <span class="main-dot" aria-hidden="true"></span></button>
       <button class="install_tab" role="tab" id="tab-desktop" aria-selected="false" aria-controls="panel-desktop" tabindex="-1">Claude Desktop <span class="main-dot" aria-hidden="true"></span></button>
       <button class="install_tab" role="tab" id="tab-gemini" aria-selected="false" aria-controls="panel-gemini" tabindex="-1">Gemini CLI <span class="main-dot" aria-hidden="true"></span></button>
       <button class="install_tab" role="tab" id="tab-any" aria-selected="false" aria-controls="panel-any" tabindex="-1">Any MCP client <span class="main-dot" aria-hidden="true"></span></button>
     </div>
-    <div class="install_panel active" role="tabpanel" id="panel-claude" aria-labelledby="tab-claude">
+    <div class="install_panel active" role="tabpanel" tabindex="0" id="panel-claude" aria-labelledby="tab-claude">
       <ol class="install_steps">
         <li><span>Open <strong>Settings → Connectors</strong> in Claude and choose <strong>Add custom connector</strong>.</span></li>
         <li><span>Name it <strong>Nomina</strong> and paste the server URL. No sign-in is required.</span></li>
@@ -240,14 +242,14 @@
       <div class="code"><code>https://mcp.nomina.io/mcp</code><button class="copy" type="button" data-copy="https://mcp.nomina.io/mcp">Copy</button></div>
       <p class="install_note">Works on Claude Pro, Max, Team and Enterprise. A directory listing is in review; until it appears, the custom-connector route above is the way in.</p>
     </div>
-    <div class="install_panel" role="tabpanel" id="panel-code" aria-labelledby="tab-code" hidden>
+    <div class="install_panel" role="tabpanel" tabindex="0" id="panel-code" aria-labelledby="tab-code" hidden>
       <ol class="install_steps">
         <li><span>Run the command below once. It registers Nomina as a Streamable HTTP server.</span></li>
         <li><span>In any session, ask about an asset, a comparison, a yield or a filing.</span></li>
       </ol>
       <div class="code"><code>claude mcp add --transport http nomina https://mcp.nomina.io/mcp</code><button class="copy" type="button" data-copy="claude mcp add --transport http nomina https://mcp.nomina.io/mcp">Copy</button></div>
     </div>
-    <div class="install_panel" role="tabpanel" id="panel-desktop" aria-labelledby="tab-desktop" hidden>
+    <div class="install_panel" role="tabpanel" tabindex="0" id="panel-desktop" aria-labelledby="tab-desktop" hidden>
       <ol class="install_steps">
         <li><span>Download <strong>Nomina.mcpb</strong> from the latest release.</span></li>
         <li><span><strong>Settings → Extensions → Advanced settings → Install Extension…</strong> and choose the file.</span></li>
@@ -255,14 +257,14 @@
       </ol>
       <div class="code"><code>github.com/nomina-xyz/nomina-mcp/releases/latest</code><a class="copy" href="https://github.com/nomina-xyz/nomina-mcp/releases/latest">Open</a></div>
     </div>
-    <div class="install_panel" role="tabpanel" id="panel-gemini" aria-labelledby="tab-gemini" hidden>
+    <div class="install_panel" role="tabpanel" tabindex="0" id="panel-gemini" aria-labelledby="tab-gemini" hidden>
       <ol class="install_steps">
         <li><span>Install the extension from the repository URL.</span></li>
         <li><span>Restart Gemini CLI; the tools are listed under Nomina.</span></li>
       </ol>
       <div class="code"><code>gemini extensions install https://github.com/nomina-xyz/nomina-mcp</code><button class="copy" type="button" data-copy="gemini extensions install https://github.com/nomina-xyz/nomina-mcp">Copy</button></div>
     </div>
-    <div class="install_panel" role="tabpanel" id="panel-any" aria-labelledby="tab-any" hidden>
+    <div class="install_panel" role="tabpanel" tabindex="0" id="panel-any" aria-labelledby="tab-any" hidden>
       <ol class="install_steps">
         <li><span>Point any Streamable HTTP client at the endpoint. Authentication: none.</span></li>
         <li><span>Self-host instead with the container image if you prefer your own egress.</span></li>
@@ -281,11 +283,43 @@
     </div>
   </div>
   <div class="trust_grid">
-    <div class="trust_card"><span class="main-dot" aria-hidden="true"></span><h3 class="text-h3">Read-only by design</h3><p class="text-body">No accounts, no funds, no orders. Every tool retrieves and computes; none can change anything.</p></div>
+    <div class="trust_card"><span class="main-dot" aria-hidden="true"></span><h3 class="text-h3">Read-only by design</h3><p class="text-body">No accounts, no funds, no orders. Every tool retrieves and computes; none can change anything. Write tools will ship as write tools — declared, permissioned and confirmable.</p></div>
     <div class="trust_card"><span class="main-dot blue" aria-hidden="true"></span><h3 class="text-h3">Nothing stored</h3><p class="text-body">No queries, conversations or credentials are kept. Only tool inputs reach the public sources. <a href="https://nomina-xyz.github.io/nomina-mcp/privacy/">Privacy policy</a></p></div>
     <div class="trust_card"><span class="main-dot purple" aria-hidden="true"></span><h3 class="text-h3">Sources you can check</h3><p class="text-body">Each answer links its source and states when the data was observed. Limits are spelled out, not hidden. <a href="https://nomina-xyz.github.io/nomina-mcp/data-sources/">Data sources</a></p></div>
     <div class="trust_card"><span class="main-dot orange" aria-hidden="true"></span><h3 class="text-h3">Open source</h3><p class="text-body">MIT-licensed server, container image and desktop bundle, built from the same tagged release. <a href="https://github.com/nomina-xyz/nomina-mcp">GitHub</a> · <a href="https://nomina-xyz.github.io/nomina-mcp/terms/">Terms</a></p></div>
   </div>
+</section>
+
+<section class="section next" id="next">
+  <div class="header_row">
+    <div class="header_stack">
+      <h2 class="text-h1">What's next</h2>
+      <p class="text-sub">Research is the first half. The second half is an agent that can act on what it found — carefully, and only when you say so.</p>
+    </div>
+  </div>
+  <ol class="roadmap">
+    <li class="roadmap_item">
+      <div class="roadmap_stage text-mono"><span class="main-dot" aria-hidden="true"></span>Shipped</div>
+      <h3 class="text-h3 sentence">Sourced research</h3>
+      <p class="text-body">Five read-only tools over public data, every answer dated and cited. Available now in Claude and any MCP client.</p>
+    </li>
+    <li class="roadmap_item">
+      <div class="roadmap_stage text-mono"><span class="main-dot purple" aria-hidden="true"></span>Next</div>
+      <h3 class="text-h3 sentence">Memory across sessions</h3>
+      <p class="text-body">Watchlists, saved comparisons and screens your agent can keep and revisit — so the second question doesn't start from scratch.</p>
+    </li>
+    <li class="roadmap_item">
+      <div class="roadmap_stage text-mono"><span class="main-dot blue" aria-hidden="true"></span>Next</div>
+      <h3 class="text-h3 sentence">Monitors that come to you</h3>
+      <p class="text-body">Standing conditions on the same public data — a level, a spread, a release — delivered to where you work instead of polled by hand.</p>
+    </li>
+    <li class="roadmap_item">
+      <div class="roadmap_stage text-mono"><span class="main-dot orange" aria-hidden="true"></span>Exploring</div>
+      <h3 class="text-h3 sentence">Agentic actions</h3>
+      <p class="text-body">Tools that do something, not just report. Each one declared as a write tool, scoped to your account, and confirmable before it runs. Research stays read-only either way.</p>
+    </li>
+  </ol>
+  <p class="install_note">Roadmap, not release notes: anything past "shipped" is planned work and may change. Nothing on this page needs an account today.</p>
 </section>
 
 <section class="faq" id="faq">
@@ -302,7 +336,7 @@
     <div class="line" role="presentation"></div>
     <details class="faq_item">
       <summary class="faq_title_wrap"><span class="text-h3 faq_question_title">Which assets have prices?</span><span class="faq_icon_wrap" aria-hidden="true"></span></summary>
-      <div class="faq_response_wrap"><p class="text-body faq_response_text">Anything with a Chainlink feed on Ethereum mainnet: major and mid-cap crypto, EUR/USD and other FX pairs, gold and silver, and a handful of US equities and ETFs such as SPY, QQQ, NVDA and TSLA. For other companies, <span class="mono-inline">company_fundamentals</span> covers filings data; prices are never invented.</p></div>
+      <div class="faq_response_wrap"><p class="text-body faq_response_text">Anything with a Chainlink feed on Ethereum mainnet: major and mid-cap crypto, EUR/USD and other FX pairs, gold and silver, and a handful of US equities and ETFs such as SPY, QQQ, NVDA and TSLA. For US-GAAP filers, <span class="mono-inline">company_fundamentals</span> covers filings data; prices are never invented.</p></div>
     </details>
     <div class="line" role="presentation"></div>
     <details class="faq_item">

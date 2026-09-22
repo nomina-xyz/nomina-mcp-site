@@ -49,14 +49,19 @@
   const menuButton = document.querySelector(".nav_mob_menu_button");
   const menu = document.getElementById("mobile-menu");
   if (menuButton && menu) {
+    const covered = [document.querySelector("main"), document.querySelector("footer")].filter(Boolean);
     const setOpen = (open) => {
       menu.classList.toggle("open", open);
       menuButton.setAttribute("aria-expanded", open ? "true" : "false");
       menuButton.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       document.body.style.overflow = open ? "hidden" : "";
+      covered.forEach((el) => { el.inert = open; });
+      if (!open && document.activeElement && menu.contains(document.activeElement)) menuButton.focus();
     };
     menuButton.addEventListener("click", () => setOpen(!menu.classList.contains("open")));
-    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+    // Any in-page navigation closes the menu, including header buttons that sit above the overlay.
+    document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("click", () => setOpen(false)));
+    window.addEventListener("hashchange", () => setOpen(false));
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
   }
 })();
